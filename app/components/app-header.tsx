@@ -1,3 +1,5 @@
+import { appConfig } from '../config';
+
 /**
  * AppHeader
  */
@@ -8,7 +10,7 @@ const AppHeader = () => {
   return (
     <header>
       <div>
-        <span>🏝</span> 宁皓网
+        <span>🏝</span> {appConfig.appName}
       </div>
     </header>
   );
