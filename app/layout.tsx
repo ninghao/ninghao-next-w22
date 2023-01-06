@@ -1,5 +1,6 @@
 import './styles/global.css';
 import styles from './styles/app.module.css';
+import AppHeader from './components/app-header';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -11,11 +12,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head />
       <body>
         <div className={styles.app}>
-          <header>
-            <div>
-              <span>🏝</span> 宁皓网
-            </div>
-          </header>
+          <AppHeader />
           <main>{children}</main>
         </div>
       </body>
