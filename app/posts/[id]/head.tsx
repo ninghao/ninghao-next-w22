@@ -1,3 +1,6 @@
+import { appConfig } from '../../config';
+import { getPostById } from '../service';
+
 /**
  * 属性类型
  */
@@ -8,13 +11,17 @@ type HeadProps = {
 /**
  * Head
  */
-const Head = (props: HeadProps) => {
+const Head = async (props: HeadProps) => {
+  const post = await getPostById(props.params.id);
+  const { title } = post;
+  const pageTitle = `${title} - ${appConfig.appName}`;
+
   /**
    * 视图
    */
   return (
     <>
-      <title>{props.params.id}</title>
+      <title>{pageTitle}</title>
     </>
   );
 };

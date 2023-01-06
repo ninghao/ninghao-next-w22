@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Post } from '../type';
 
 /**
@@ -12,7 +13,7 @@ type PostListItemProps = {
  */
 const PostListItem = (props: PostListItemProps) => {
   const {
-    data: { title, content, user },
+    data: { title, content, user, id },
   } = props;
 
   /**
@@ -22,7 +23,9 @@ const PostListItem = (props: PostListItemProps) => {
     <div>
       <div></div>
       <div>
-        <div>{title}</div>
+        <div>
+          <Link href={`/posts/${id}`}>{title}</Link>
+        </div>
         <div>{content}</div>
         <div>- {user.name}</div>
       </div>

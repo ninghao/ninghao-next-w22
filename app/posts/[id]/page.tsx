@@ -1,3 +1,5 @@
+import { getPostById } from '../service';
+
 /**
  * 属性类型
  */
@@ -8,11 +10,19 @@ type PageProps = {
 /**
  * Page
  */
-const Page = (props: PageProps) => {
+const Page = async (props: PageProps) => {
+  const post = await getPostById(props.params.id);
+  const { title, content } = post;
+
   /**
    * 视图
    */
-  return <div>内容 {props.params.id}</div>;
+  return (
+    <div>
+      <h1>{title}</h1>
+      <div>{content}</div>
+    </div>
+  );
 };
 
 /**
