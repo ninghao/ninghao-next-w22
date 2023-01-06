@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { appConfig } from '../config';
 
 /**
@@ -10,7 +11,7 @@ const AppHeader = () => {
   return (
     <header>
       <div>
-        <span>🏝</span> {appConfig.appName}
+        <span>🏝</span> <Link href="/">{appConfig.appName}</Link>
       </div>
     </header>
   );

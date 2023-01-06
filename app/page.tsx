@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 /**
  * Page
  */
@@ -9,6 +11,9 @@ const Page = () => {
     <div>
       <h1>首页</h1>
       <div>我在宁皓网学习 Next.js。</div>
+      <div>
+        <Link href="/about">关于我们 →</Link>
+      </div>
     </div>
   );
 };
