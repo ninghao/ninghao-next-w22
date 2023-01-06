@@ -1,12 +1,19 @@
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+type RootLayoutProps = {
+  children: React.ReactNode;
+};
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body>
+        <header>
+          <div>
+            <span>🏝</span> 宁皓网
+          </div>
+        </header>
+        <main>{children}</main>
+      </body>
     </html>
-  )
+  );
 }
