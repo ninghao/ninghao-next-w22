@@ -29,7 +29,23 @@ const middleware = (request: NextRequest) => {
   }
 
   if (pathname === '/about') {
-    return NextResponse.rewrite(new URL('/variation/about', request.url));
+    const cookieName = 'testing';
+    let cookieValue = request.cookies.get(cookieName)?.value;
+
+    if (!cookieValue) {
+      cookieValue = Math.random() < 0.5 ? 'normality' : 'variation';
+    }
+
+    const rewritePath =
+      cookieValue === 'variation' ? `/variation${pathname}` : pathname;
+
+    const response = NextResponse.rewrite(new URL(rewritePath, request.url));
+
+    if (!request.cookies.get(cookieName)) {
+      response.cookies.set(cookieName, cookieValue);
+    }
+
+    return response;
   }
 };
 
