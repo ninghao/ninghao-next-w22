@@ -1,7 +1,12 @@
+import { getPosts } from './service';
+
 /**
  * Page
  */
-const Page = () => {
+const Page = async () => {
+  const posts = await getPosts();
+  console.log(posts);
+
   /**
    * 视图
    */
