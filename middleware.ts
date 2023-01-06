@@ -27,6 +27,10 @@ const middleware = (request: NextRequest) => {
 
     return NextResponse.redirect(nextUrl);
   }
+
+  if (pathname === '/about') {
+    return NextResponse.rewrite(new URL('/variation/about', request.url));
+  }
 };
 
 export default middleware;
