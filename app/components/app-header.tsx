@@ -1,17 +1,25 @@
-import Link from 'next/link';
+'use client';
+
+import { useRouter } from 'next/navigation';
 import { appConfig } from '../config';
 
 /**
  * AppHeader
  */
 const AppHeader = () => {
+  const router = useRouter();
+
   /**
    * 视图
    */
   return (
     <header>
-      <div>
-        <span>🏝</span> <Link href="/">{appConfig.appName}</Link>
+      <div
+        onClick={() => {
+          router.push('/');
+        }}
+      >
+        <span>🏝</span> {appConfig.appName}
       </div>
     </header>
   );
