@@ -1,3 +1,5 @@
+import { appConfig } from '../config';
+
 /**
  * Page
  */
@@ -9,6 +11,7 @@ const Page = () => {
     <div>
       <h1>关于</h1>
       <div>宁皓网创建于 2011 年。</div>
+      <div>{appConfig.apiBaseUrl}</div>
     </div>
   );
 };
