@@ -1,3 +1,4 @@
+import PostList from './components/post-list';
 import { getPosts } from './service';
 
 /**
@@ -10,7 +11,11 @@ const Page = async () => {
   /**
    * 视图
    */
-  return <div>内容列表</div>;
+  return (
+    <div>
+      <PostList data={posts} />
+    </div>
+  );
 };
 
 /**
