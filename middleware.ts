@@ -1,3 +1,4 @@
+import { userAgent } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 // export const config = {
@@ -13,6 +14,9 @@ const middleware = (request: NextRequest) => {
     console.log('🌵 中间件: middleware');
     console.log(request.nextUrl.pathname);
   }
+
+  const ua = userAgent(request);
+  console.log(ua);
 };
 
 export default middleware;
