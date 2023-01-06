@@ -1,4 +1,26 @@
 {
+  "API handler": {
+    "prefix": "ah",
+    "body": [
+      "import { NextApiRequest, NextApiResponse } from 'next';",
+      "",
+      "const handler = async (request: NextApiRequest, response: NextApiResponse) => {",
+      "  if (request.method !== '${1:GET}') {",
+      "    return response.status(400).send('无效请求😬');",
+      "  }",
+      "",
+      "  ${2}",
+      "",
+      "  return response.json({ message: true });",
+      "};",
+      "",
+      "export default handler;"
+    ]
+  },
+  "Destructuring assignment": {
+    "prefix": "ds",
+    "body": ["const {${2}} = ${1};", ""]
+  },
   "useContext": {
     "prefix": "uc",
     "body": ["const ${2} = ${3:useContext}(${1})", ""]
@@ -23,8 +45,8 @@
     "prefix": "ir",
     "body": ["import {${1}} from 'react';"]
   },
-  "React function component": {
-    "prefix": "rfc",
+  "React function component with props": {
+    "prefix": "rfcp",
     "body": [
       "/**",
       " * 属性类型",
@@ -32,17 +54,37 @@
       "type ${1:ComponentName}Props = {};",
       "",
       "/**",
-      " * 组件",
+      " * ${1:ComponentName}",
       " */",
       "const ${1:ComponentName} = (props: ${1:ComponentName}Props) => {",
       "  /**",
-      "   * 组件视图",
+      "   * 视图",
       "   */",
       "  return <div>${1:ComponentName}</div>",
       "}",
       "",
       "/**",
-      " * 导出组件",
+      " * 导出 ${1:ComponentName}",
+      " */",
+      "export default ${1:ComponentName};",
+      ""
+    ]
+  },
+  "React function component": {
+    "prefix": "rfc",
+    "body": [
+      "/**",
+      " * ${1:ComponentName}",
+      " */",
+      "const ${1:ComponentName} = () => {",
+      "  /**",
+      "   * 视图",
+      "   */",
+      "  return <div>${1:ComponentName}</div>",
+      "}",
+      "",
+      "/**",
+      " * 导出 ${1:ComponentName}",
       " */",
       "export default ${1:ComponentName};",
       ""
@@ -64,7 +106,7 @@
       "type ${1:ComponentName}State = {};",
       "",
       "/**",
-      " * 组件",
+      " * ${1:ComponentName}",
       " */",
       "class ${1:ComponentName} extends Component<${1:ComponentName}Props, ${1:ComponentName}State> {",
       "  /**",
@@ -73,18 +115,21 @@
       "  static defaultProps = {};",
       "",
       "  /**",
-      "   * 组件状态",
+      "   * 状态",
       "   */",
       "  state: ${1:ComponentName}State = {};",
       "",
       "  /**",
-      "   * 渲染",
+      "   * 视图",
       "   */",
       "  render() {",
       "    return <div>${1:ComponentName}</div>;",
       "  }",
       "}",
       "",
+      "/**",
+      " * 导出 ${1:ComponentName}",
+      " */",
       "export default ${1:ComponentName};",
       ""
     ]
@@ -121,18 +166,21 @@
       "  static defaultProps = {};",
       "",
       "  /**",
-      "   * 组件状态",
+      "   * 状态",
       "   */",
       "  state: ${1:ComponentName}State = {};",
       "",
       "  /**",
-      "   * 渲染",
+      "   * 视图",
       "   */",
       "  render() {",
       "    return <div>${1:ComponentName}</div>;",
       "  }",
       "}",
       "",
+      "/**",
+      " * 导出 ${1:ComponentName}",
+      " */",
       "export default ${1:ComponentName};",
       ""
     ]
