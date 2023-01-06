@@ -11,12 +11,12 @@ const middleware = (request: NextRequest) => {
   } = request;
 
   if (pathname.startsWith('/posts')) {
-    console.log('🌵 中间件: middleware');
-    console.log(request.nextUrl.pathname);
+    // console.log('🌵 中间件: middleware');
+    // console.log(request.nextUrl.pathname);
   }
 
-  const ua = userAgent(request);
-  console.log(ua);
+  // const ua = userAgent(request);
+  // console.log(ua);
 
   if (pathname === '/articles') {
     // return NextResponse.redirect('http://localhost:3000/posts');
