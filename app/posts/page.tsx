@@ -1,6 +1,8 @@
 import PostList from './components/post-list';
 import { getPosts } from './service';
 
+export const revalidate = 3600;
+
 /**
  * Page
  */
