@@ -9,18 +9,15 @@ import p4 from '/public/images/5122.jpg';
  * Page
  */
 const Page = () => {
-  const imageStyles: CSSProperties = { width: '100%', height: 'auto' };
+  const imageStyles: CSSProperties = { objectFit: 'cover' };
 
   /**
    * 视图
    */
   return (
     <div>
-      <div>
-        <Image priority src={p1} alt="" style={imageStyles} quality={80} />
-        <Image src={p2} alt="" style={imageStyles} quality={80} />
-        <Image src={p3} alt="" style={imageStyles} quality={80} />
-        <Image src={p4} alt="" style={imageStyles} quality={80} />
+      <div style={{ position: 'relative', height: 560 }}>
+        <Image fill src={p1} alt="" style={imageStyles} quality={80} />
       </div>
     </div>
   );
