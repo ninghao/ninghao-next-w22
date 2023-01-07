@@ -10,3 +10,8 @@ export const getPostById = async (postId: string | number) => {
   const response = await apiHttpClient(`posts/${postId}`);
   return response.json() as Promise<Post>;
 };
+
+export const deletePostById = async (postId: string | number) => {
+  const response = await apiHttpClient(`posts/${postId}`, { method: 'DELETE' });
+  return response.json();
+};
