@@ -5,8 +5,10 @@ import {
   Dispatch,
   ReactNode,
   SetStateAction,
+  useEffect,
   useState,
 } from 'react';
+import { getStorage, setStorage, StorageKey } from '../service';
 
 /**
  * 属性类型
@@ -29,6 +31,20 @@ export const AuthContext = createContext<AuthContextValue>({});
  */
 const AuthProvider = (props: AuthProviderProps) => {
   const [currentUser, setCurrentUser] = useState<CurrentUser>();
+
+  useEffect(() => {
+    if (currentUser !== undefined) {
+      setStorage(StorageKey.currentUser, currentUser);
+    } else {
+      const currentUserFromStorage = getStorage<CurrentUser>(
+        StorageKey.currentUser,
+      );
+
+      if (currentUserFromStorage) {
+        setCurrentUser(currentUserFromStorage);
+      }
+    }
+  }, [currentUser]);
 
   /**
    * 视图

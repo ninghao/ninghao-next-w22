@@ -30,3 +30,16 @@ export const apiHttpClient = async (api: string, init?: RequestInit) => {
 
   return response;
 };
+
+export const setStorage = (key: string, value: any) => {
+  localStorage.setItem(key, JSON.stringify(value));
+};
+
+export const getStorage = <T>(key: string): T | null => {
+  const data = localStorage.getItem(key);
+  return data ? (JSON.parse(data) as T) : null;
+};
+
+export enum StorageKey {
+  currentUser = 'currentUser',
+}
