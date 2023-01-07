@@ -1,5 +1,6 @@
 'use client';
 
+import { appConfig } from '../config';
 import './styles/error.css';
 
 /**
@@ -20,7 +21,11 @@ const Error = (props: ErrorProps) => {
    */
   return (
     <div className="error">
-      <div>{error.message}</div>
+      <div>
+        {appConfig.isProduction
+          ? '🌋 当前出了点小问题，我们会尽快解决：）'
+          : error.message}
+      </div>
     </div>
   );
 };
