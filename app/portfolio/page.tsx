@@ -17,7 +17,14 @@ const Page = () => {
   return (
     <div>
       <div style={{ position: 'relative', height: 560 }}>
-        <Image fill src={p1} alt="" style={imageStyles} quality={80} />
+        <Image
+          fill
+          sizes="(max-width: 640px) 50vw, 100vw"
+          src={p1}
+          alt=""
+          style={imageStyles}
+          quality={80}
+        />
       </div>
     </div>
   );
