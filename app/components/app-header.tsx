@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { appConfig } from '../config';
+import AppToolbar from './app-toolbar';
 import NavLink from './nav-link';
 
 /**
@@ -30,6 +31,7 @@ const AppHeader = () => {
           <NavLink href="/posts">内容</NavLink>
         </div>
       </nav>
+      <AppToolbar />
     </header>
   );
 };

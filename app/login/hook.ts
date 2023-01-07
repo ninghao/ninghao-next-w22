@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { apiHttpClient } from '../service';
+import { AuthContext } from './provider';
 
 export const useAuth = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const { setCurrentUser } = useContext(AuthContext);
 
   const login = async () => {
     if (name && password) {
@@ -16,7 +18,10 @@ export const useAuth = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+
+      if (response.status === 200) {
+        setCurrentUser!(data);
+      }
     }
   };
 
