@@ -8,7 +8,7 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { getStorage, setStorage, StorageKey } from '../service';
+import { getStorage, setAuthHeader, setStorage, StorageKey } from '../service';
 
 /**
  * 属性类型
@@ -35,6 +35,7 @@ const AuthProvider = (props: AuthProviderProps) => {
   useEffect(() => {
     if (currentUser !== undefined) {
       setStorage(StorageKey.currentUser, currentUser);
+      setAuthHeader(currentUser.token);
     } else {
       const currentUserFromStorage = getStorage<CurrentUser>(
         StorageKey.currentUser,
@@ -42,6 +43,7 @@ const AuthProvider = (props: AuthProviderProps) => {
 
       if (currentUserFromStorage) {
         setCurrentUser(currentUserFromStorage);
+        setAuthHeader(currentUserFromStorage.token);
       }
     }
   }, [currentUser]);
