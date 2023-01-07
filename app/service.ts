@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { appConfig } from './config';
 
 const apiHttpClientHeaders: Record<string, any> = {};
@@ -21,6 +22,10 @@ export const apiHttpClient = async (api: string, init?: RequestInit) => {
 
   if (response.status === 500) {
     throw new Error('🌋 后端服务出了点问题。');
+  }
+
+  if (response.status === 404) {
+    notFound();
   }
 
   return response;
