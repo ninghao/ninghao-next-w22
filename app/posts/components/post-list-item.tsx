@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { appConfig } from '../../config';
 import { Post } from '../type';
+import PostToolbar from './post-toolbar';
 
 /**
  * 属性类型
@@ -34,6 +35,7 @@ const PostListItem = (props: PostListItemProps) => {
         </div>
         <div>{content}</div>
         <div>- {user.name}</div>
+        <PostToolbar postId={id} />
       </div>
     </div>
   );
