@@ -9,7 +9,7 @@ import { AuthContext } from '../login/provider';
  * AppToolbar
  */
 const AppToolbar = () => {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, logout } = useContext(AuthContext);
 
   /**
    * 视图
@@ -18,6 +18,15 @@ const AppToolbar = () => {
     <div>
       {currentUser && (
         <>
+          <div>
+            <Image
+              src="/icons/logout.svg"
+              alt="退出登录"
+              width={24}
+              height={24}
+              onClick={() => logout!()}
+            />
+          </div>
           <div>{currentUser.name}</div>
         </>
       )}
