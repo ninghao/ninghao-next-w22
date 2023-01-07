@@ -20,7 +20,7 @@ const Page = () => {
         <Image
           fill
           sizes="(max-width: 640px) 50vw, 100vw"
-          src={p1}
+          src="https://resources.ninghao.net/images/4612.jpg"
           alt=""
           style={imageStyles}
           quality={80}

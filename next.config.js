@@ -30,6 +30,17 @@ const nextConfig = {
       },
     ];
   },
+
+  images: {
+    // domains: ['resources.ninghao.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'resources.ninghao.net',
+        pathname: '/images/**',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
