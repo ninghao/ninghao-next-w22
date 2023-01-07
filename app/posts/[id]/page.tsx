@@ -1,4 +1,12 @@
-import { getPostById } from '../service';
+import { getPostById, getPosts } from '../service';
+
+export const generateStaticParams = async () => {
+  const posts = await getPosts();
+
+  return posts.map((item) => ({
+    id: `${item.id}`,
+  }));
+};
 
 /**
  * 属性类型
