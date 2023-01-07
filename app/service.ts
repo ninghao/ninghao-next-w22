@@ -19,5 +19,9 @@ export const apiHttpClient = async (api: string, init?: RequestInit) => {
     },
   });
 
+  if (response.status === 500) {
+    throw new Error('🌋 后端服务出了点问题。');
+  }
+
   return response;
 };

@@ -12,9 +12,15 @@ type HeadProps = {
  * Head
  */
 const Head = async (props: HeadProps) => {
-  const post = await getPostById(props.params.id);
-  const { title } = post;
-  const pageTitle = `${title} - ${appConfig.appName}`;
+  let pageTitle = '';
+
+  try {
+    const post = await getPostById(props.params.id);
+    const { title } = post;
+    pageTitle = `${title} - ${appConfig.appName}`;
+  } catch (error) {
+    console.log(error);
+  }
 
   /**
    * 视图
