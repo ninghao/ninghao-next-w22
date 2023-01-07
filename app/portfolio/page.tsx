@@ -17,7 +17,7 @@ const Page = () => {
   return (
     <div>
       <div>
-        <Image src={p1} alt="" style={imageStyles} quality={80} />
+        <Image priority src={p1} alt="" style={imageStyles} quality={80} />
         <Image src={p2} alt="" style={imageStyles} quality={80} />
         <Image src={p3} alt="" style={imageStyles} quality={80} />
         <Image src={p4} alt="" style={imageStyles} quality={80} />
