@@ -19,6 +19,16 @@ const AppToolbar = () => {
       {currentUser && (
         <>
           <div>
+            <Link href="/create">
+              <Image
+                src="/icons/add.svg"
+                alt="添加内容"
+                width={24}
+                height={24}
+              />
+            </Link>
+          </div>
+          <div>
             <Image
               src="/icons/logout.svg"
               alt="退出登录"
