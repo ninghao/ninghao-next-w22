@@ -14,6 +14,8 @@ const Page = async (props: PageProps) => {
   const post = await getPostById(props.params.id);
   const { title, content } = post;
 
+  console.log('🌵', title);
+
   /**
    * 视图
    */

@@ -7,6 +7,8 @@ import { getPosts } from './service';
 const Page = async () => {
   const posts = await getPosts();
 
+  console.log('🎄 内容列表');
+
   /**
    * 视图
    */
