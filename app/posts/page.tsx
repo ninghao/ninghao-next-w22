@@ -6,7 +6,6 @@ import { getPosts } from './service';
  */
 const Page = async () => {
   const posts = await getPosts();
-  console.log(posts);
 
   /**
    * 视图

@@ -10,8 +10,6 @@ import NavLink from './nav-link';
 const AppHeader = () => {
   const router = useRouter();
 
-  console.log('AppHeader');
-
   /**
    * 视图
    */
