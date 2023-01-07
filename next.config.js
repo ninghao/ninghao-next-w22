@@ -32,7 +32,7 @@ const nextConfig = {
   },
 
   images: {
-    // domains: ['resources.ninghao.net'],
+    domains: ['resources.ninghao.net', 'localhost', 'nid-node.ninghao.co'],
     remotePatterns: [
       {
         protocol: 'https',
